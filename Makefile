@@ -6,7 +6,7 @@ $(EXECUTABLE): $(GOSRCS) converse.o
 	rm -f bin/pam_opie.h
 
 converse.o: converse/converse.c
-	gcc -c converse/converse.c
+	gcc -c -fPIC converse/converse.c
 
 test:
 	go test -race -coverprofile=coverage.txt -covermode=atomic authenticate.go authenticate_test.go
